@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-!z)fy539%nalsn#+dkt!k%7!f&6-pp0vdo2f#xh1w%z=8=d8qt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = ['https://stressdetection.up.railway.app']
 ALLOWED_HOSTS = ["*"]
 
 
@@ -118,11 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    
+STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static')
 ]
+
+
+
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
